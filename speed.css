@@ -1,0 +1,106 @@
+* {
+    /*Setting margin and padding to zero to remove borders and adding importance*/
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+html, body {
+    height: 100%;
+}
+canvas {
+    z-index: auto;
+    position: relative;
+    display: block;
+    object-fit: contain;
+}
+/*Class styles*/
+
+.game_button {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    background: #000000;
+    transition: 0.5s;
+    border-radius: 2rem;
+    border: none;
+    text-align: center;
+    color: #fff;
+    font-family: "Arial Black", sans-serif;
+}
+.game_button:hover {
+    background-color: transparent;
+    transition: 0.5s;
+}
+.button_container {
+    box-sizing: unset;
+    background: linear-gradient(45deg, red, blue);
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    padding: 2px;
+}
+/*ID styles*/
+
+#game_canvas {
+    /*containing the object fit, to prevent stretching of drawings and images*/
+    object-fit: contain;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+#input_field {
+    z-index: 1;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#input_field .button_container {
+    display: inline-block;
+    margin: 2% 2% 2% 2%;
+}
+#game_menu {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 5em;
+}
+#pause_button, #exit_button {
+    display: none;
+}
+#player_name:hover {
+    background-color: black;
+}
+#highscores_container {
+    z-index: auto;
+    position: absolute;
+    /*Leave space for title*/
+    top: 15%;
+    left: 50%;
+    width: 100%;
+    /*Center align element*/
+    transform: translateX(-50%);
+    color: white;
+}
+#highscores {
+    margin-left: 50%;
+    height: 70%;
+    width: 95%;
+    transform: translateX(-50%);
+    font-family: 'Arial Black', sans-serif;
+    border: white 1px solid;
+    text-align: center;
+}
+
+/*For the hide_highscores button*/
+#hide_highscores {
+    width: 20%;
+    margin-top: 5%;
+    margin-left: 50%;
+    padding: 2px;
+    transform: translateX(-50%);
+}

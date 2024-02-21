@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Speed</title>
+  <link rel="stylesheet" type="text/css" href="speed.css">
+</head>
+<body onload="game_namespace.init(); highscores_namespace()" >
+  <form>
+    <canvas id="game_canvas"></canvas>
+    <div id="input_field">
+      <div class="button_container"><label for="player_name"></label><input class="game_button" id="player_name" type="text" placeholder="Enter Name"></div>
+      <input type="hidden" id="score" value="">
+      <input type="hidden" id="sess_id_nu" value="">
+    </div>
+    <div id="game_menu">
+      <div class="button_container">
+        <input class="game_button" type="button" value="Start" onclick="game_namespace.start_game();">
+      </div>
+      <div class="button_container">
+        <input class="game_button" type="button" value="HighScores" onclick="highscores_namespace().show_highscores(); game_namespace.displayHighscores();">
+      </div>
+    </div>
+  </form>
+  <div id="highscores_container"> <!-- table for displaying scores -->
+    <table id="highscores">
+      <thead id="top_scores_head"></thead>
+      <tbody id="top_scores"></tbody>
+    </table>
+    <div class="button_container" id="hide_highscores">
+      <input class="game_button" type="button" value="Hide HighScores" onclick="highscores_namespace().hide_highscores(); game_namespace.init();">
+    </div>
+  </div>
+</body>
+  <script src="speed.js"></script>
+  <script src="highscores.js"></script>
+</html>
